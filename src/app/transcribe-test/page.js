@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { putAudio } from "../_lib/aws/s3";
+import { putAudio, getText } from "../_lib/aws/s3";
 
 const mimeType = "audio/mp3";
 
@@ -12,6 +12,7 @@ export default function AudioRecorder() {
   const [stream, setStream] = useState(null);
   const [audioChunks, setAudioChunks] = useState([]);
   const [audio, setAudio] = useState(null);
+  const [text, setText] = useState("");
 
   const getMicrophonePermission = async () => {
     if ("MediaRecorder" in window) {
@@ -62,28 +63,35 @@ export default function AudioRecorder() {
     };
   };
 
+  const getResult = () => {
+    setText(getText());
+  };
+
   return (
     <div>
       <h2>Audio Recorder</h2>
-      <main>
-        <div className="audio-controls">
-          {!permission ? (
-            <button onClick={getMicrophonePermission} type="button">
-              Get Microphone
-            </button>
-          ) : null}
-          {permission && recordingStatus === "inactive" ? (
-            <button onClick={startRecording} type="button">
-              Start Recording
-            </button>
-          ) : null}
-          {recordingStatus === "recording" ? (
-            <button onClick={stopRecording} type="button">
-              Stop Recording
-            </button>
-          ) : null}
-        </div>
-      </main>
+      <div className="audio-controls">
+        {!permission ? (
+          <button onClick={getMicrophonePermission} type="button">
+            Get Microphone
+          </button>
+        ) : null}
+        {permission && recordingStatus === "inactive" ? (
+          <button onClick={startRecording} type="button">
+            Start Recording
+          </button>
+        ) : null}
+        {recordingStatus === "recording" ? (
+          <button onClick={stopRecording} type="button">
+            Stop Recording
+          </button>
+        ) : null}
+      </div>
+      <h2>Transcription</h2>
+      <button onClick={getResult} type="button">
+        Get Result
+      </button>
+      <div>{text}</div>
     </div>
   );
 }

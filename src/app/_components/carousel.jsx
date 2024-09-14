@@ -94,7 +94,7 @@ export const Carousel = () => {
               </div>
               <div className="flex justify-between w-full pt-8">
                 <div className="pt-4 align-text-bottom">Difficulty: {pane.difficulty}</div>
-                <Link className="w-1/2 p-2 px-4 text-center text-white bg-purple-900 rounded-md z-100" href="/test-page">
+                <Link className="w-1/2 p-2 px-4 text-center text-white bg-purple-900 rounded-md z-100" href="/opponent-speaking">
                         Start Debate
                 </Link>
                 </div>

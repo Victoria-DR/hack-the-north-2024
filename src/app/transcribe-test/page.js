@@ -59,7 +59,7 @@ export default function AudioRecorder() {
       const audioUrl = URL.createObjectURL(audioBlob);
       setAudio(audioUrl);
       setAudioChunks([]);
-      putAudio(audioBlob);
+      putAudio("user.mp3", audioBlob);
     };
   };
 

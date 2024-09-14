@@ -13,10 +13,10 @@ const client = new S3Client({
   },
 });
 
-export const putAudio = async (data) => {
+export const putAudio = async (filename, data) => {
   const command = new PutObjectCommand({
     Bucket: "hack-the-north-2024-audio",
-    Key: "audio.mp3",
+    Key: filename,
     Body: data,
   });
 
@@ -40,6 +40,22 @@ export const getText = async () => {
     const str = await response.Body.transformToString();
     console.log(str);
     return str;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const getAudio = async () => {
+  const command = new GetObjectCommand({
+    Bucket: "hack-the-north-2024-audio",
+    Key: "ai.mp3",
+  });
+
+  try {
+    const response = await client.send(command);
+    const result = await response.Body;
+    console.log(result);
+    return result;
   } catch (err) {
     console.error(err);
   }

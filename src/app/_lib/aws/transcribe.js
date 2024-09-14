@@ -6,6 +6,7 @@ import {
 } from "@aws-sdk/client-transcribe-streaming";
 import MicrophoneStream from "microphone-stream";
 import { Buffer } from "buffer";
+require("dotenv").config();
 
 let microphoneStream = undefined;
 const language = "en-US";

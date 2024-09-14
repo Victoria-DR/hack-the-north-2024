@@ -57,7 +57,7 @@ const getAudioStream = async function* () {
   }
 };
 
-const startStreaming = async (language, callback) => {
+const startStreaming = async (language) => {
   const command = new StartStreamTranscriptionCommand({
     LanguageCode: language,
     MediaEncoding: "pcm",
@@ -70,18 +70,18 @@ const startStreaming = async (language, callback) => {
     if (results.length && !results[0]?.IsPartial) {
       const newTranscript = results[0].Alternatives[0].Transcript;
       console.log(newTranscript);
-      callback(newTranscript + " ");
+      // callback(newTranscript + " ");
     }
   }
 };
 
-export const startRecording = async (callback) => {
+export const startRecording = async () => {
   if (microphoneStream || transcribeClient) {
     stopRecording();
   }
   createTranscribeClient();
   createMicrophoneStream();
-  await startStreaming(language, callback);
+  await startStreaming(language);
 };
 
 export const stopRecording = function () {

@@ -26,15 +26,15 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center z-20 justify-center min-h-screen h-screen w-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
-      <h1 className="text-7xl font-regular text-black mb-6">
+    <div className="z-20 flex flex-col items-center justify-center w-screen h-screen min-h-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
+      <h1 className="mb-6 text-black text-7xl font-regular">
         Prepare your speech
       </h1>
-      <h1 className="text-8xl tracking-[0.17em] text-black font-unbounded font-bold mb-4">
+      <h1 className="text-8xl tracking-[0.17em] text-black font-unbound font-bold mb-4">
         {formatTime(seconds)}
       </h1>
       {seconds === 0 && (
-        <h2 className="text-3xl font-semibold text-black pt-8">
+        <h2 className="pt-8 text-3xl font-semibold text-black">
           Beginning Debate session...
         </h2>
       )}
@@ -42,7 +42,7 @@ export default function Home() {
       {/* Stop Button */}
       <button
         onClick={stopTimer}
-        className="px-6 py-2 bg-purple-300 text-black font-semibold rounded-lg hover:bg-purple-800 hover:text-white"
+        className="px-6 py-2 font-semibold text-black bg-purple-300 rounded-lg hover:bg-purple-800 hover:text-white"
       >
         Start Debate
       </button>

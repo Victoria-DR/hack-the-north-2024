@@ -108,7 +108,7 @@ const input = {
   TranscriptionJobName: "my-first-transcription-job",
   LanguageCode: "en-US",
   Media: {
-    MediaFileUri: "s3://hack-the-north-2024-audio/real.flac",
+    MediaFileUri: "s3://hack-the-north-2024-audio/real.mp3",
   },
   OutputBucketName: "hack-the-north-2024-text",
 };
@@ -129,4 +129,4 @@ async function startTranscriptionRequest() {
   }
 }
 
-// startTranscriptionRequest();
+startTranscriptionRequest();

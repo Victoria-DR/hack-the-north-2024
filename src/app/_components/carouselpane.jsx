@@ -23,23 +23,19 @@ const CarousselPane = ({ children, id, numPanes, activePane }) => {
 
     // default
   } else {
-    style = "opacity-100 opacity-30 scale-50 z-0";
+    style = "opacity-100 scale-50 z-0";
   }
 
   return (
       <div
         className={`absolute t-0 r-0 b-0 l-0 m-auto h-5/6 w-2/5 max-w-3xl p-3
-      duration-500 ${style}`}
+      duration-500 rounded-lg shadow-homeCard ${style}`}
       >
-        <div>
+        <div className="">
             <div
-            className="w-full p-8 text-black h-fit lg:h-full sm:p-11 bg-gradient-to-b"
+            className="w-full p-8 text-black h-fit lg:h-full bg-gradient-to-b"
             >
             {children}
-
-            <div classname="w-3/4 h-20 text-white bg-black align-center">
-                Debate THIS IS white
-            </div>
             </div>
         </div>
       </div>

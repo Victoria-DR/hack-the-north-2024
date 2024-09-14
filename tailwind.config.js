@@ -11,7 +11,13 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      boxShadow: {
+        'homeCard': '0 4px 4px 0px rgba(0, 0, 0, 0.25)',
+      }
     },
+    fontFamily: {
+      'unbound' : ['"Unbounded Variable"', 'sans-serif'],
+    }
   },
   plugins: [],
 };

@@ -11,6 +11,15 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        gradient: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+      },
+      animation: {
+        "gradient-flow": "gradient 3s ease infinite",
+      },
       boxShadow: {
         'homeCard': '0 4px 4px 0px rgba(0, 0, 0, 0.25)',
       },
@@ -45,7 +54,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      'unbound': ['"Unbounded Variable"', "sans-serif"],
+      unbound: ['"Unbounded Variable"', "sans-serif"],
     },
   },
   plugins: [],

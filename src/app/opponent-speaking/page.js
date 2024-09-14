@@ -1,5 +1,5 @@
-import React from 'react';
-import Panel from '../_components/panel';
+import React from "react";
+import Panel from "../_components/panel";
 
 
 const OpponentSpeakingPage = ({topic}) => {

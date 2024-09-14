@@ -1,26 +1,91 @@
-export default function userSpeech() {
+"use client"; // Enables client-side rendering
+import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
+import Microphone from "../../public/microphone.png";
+
+export default function Home() {
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isListening, setIsListening] = useState(false); // Detect if mic input is detected
+  const [isRecognitionActive, setIsRecognitionActive] = useState(false); // Toggle recognition
+  const recognitionRef = useRef(null); // To store recognition instance
+
+  useEffect(() => {
+    // Web Speech API for speech recognition
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    recognition.continuous = true; // Keep detecting continuously
+    recognition.interimResults = true;
+
+    recognition.onstart = () => {
+      console.log("Voice recognition started");
+    };
+
+    recognition.onresult = (event) => {
+      if (event.results[0].isFinal) {
+        const transcript = event.results[0][0].transcript;
+        setIsSpeaking(false); // No longer speaking when final input is detected
+        playBackVoice(transcript); // Play back the recognized speech
+      } else {
+        setIsSpeaking(true); // Speaking detected
+        console.log("I can hear you"); // Log this whenever speech is detected
+      }
+    };
+
+    recognition.onerror = (event) => {
+      console.error(event.error);
+      setIsListening(false); // Stop listening if an error occurs
+    };
+
+    recognition.onend = () => {
+      setIsListening(false); // Stop listening when recognition ends
+    };
+
+    recognitionRef.current = recognition; // Save recognition instance in ref
+
+    return () => recognition.abort(); // Cleanup on unmount
+  }, []);
+
+  // Function to toggle speech recognition when microphone is clicked
+  const toggleRecognition = () => {
+    if (isRecognitionActive) {
+      recognitionRef.current.stop(); // Stop recognition if it's active
+      setIsListening(false);
+    } else {
+      recognitionRef.current.start(); // Start recognition if it's inactive
+      setIsListening(true);
+    }
+    setIsRecognitionActive(!isRecognitionActive); // Toggle recognition state
+  };
+
+  // Function to play back the recognized speech using SpeechSynthesis API
+  const playBackVoice = (text) => {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(text);
+    synth.speak(utterance);
+  };
+
   return (
-    <div className="w-96 h-96 relative bg-white rounded-3xl">
-      <img
-        className="w-40 h-40 left-[552px] top-[200px] absolute rounded-full shadow border border-[#666666]"
-        src="https://via.placeholder.com/158x158"
-      />
-      <img
-        className="w-24 h-24 left-[30px] top-[15px] absolute"
-        src="https://via.placeholder.com/90x90"
-      />
-      <div className="w-40 h-40 left-[559px] top-[566px] absolute">
-        <div className="w-11 h-20 left-[59.27px] top-[32.40px] absolute bg-gradient-to-b from-[#da39e4] via-[#7ddffe] to-[#fff390] rounded-2xl" />
-        <img
-          className="w-40 h-40 left-0 top-0 absolute"
-          src="https://via.placeholder.com/162x162"
-        />
+    <div className="flex flex-col items-center z-30 justify-center min-h-screen h-screen w-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
+      <h1 className="text-6xl items-center font-regular text-black mb-6">
+        Topic: [Placeholder Topic]
+      </h1>
+
+      {/* Microphone with click event to toggle recognition */}
+      <div
+        className={`max-w-xs mx-auto pt-48 cursor-pointer ${isSpeaking ? "animate-gradient-flow bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-[length:200%_200%]" : ""}`}
+        onClick={toggleRecognition}
+      >
+        <Image src={Microphone} width={100} height={80} alt="Microphone" />
       </div>
-      <div className="w-96 h-48 left-[154px] top-[321px] absolute text-center text-[#340737] text-6xl font-bold font-['Red Hat Display']">
-        Topic: Why Python is better than Java
-      </div>
-      <div className="w-96 h-24 left-[463px] top-[755px] absolute text-center text-black text-2xl font-normal font-['Noto Sans Bengali UI']">
-        Your Opponent is listening...
+
+      <div className="text-center text-black text-xl pt-4">
+        {!isRecognitionActive
+          ? "Click the mic to start speaking"
+          : isSpeaking
+            ? "Opponent is listening..."
+            : "Start Speaking"}
       </div>
     </div>
   );

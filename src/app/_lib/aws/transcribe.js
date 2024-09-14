@@ -129,4 +129,4 @@ async function startTranscriptionRequest() {
   }
 }
 
-startTranscriptionRequest();
+// startTranscriptionRequest();

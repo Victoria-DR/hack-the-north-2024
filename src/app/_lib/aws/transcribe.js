@@ -2,6 +2,7 @@ import {
   TranscribeClient,
   StartTranscriptionJobCommand,
 } from "@aws-sdk/client-transcribe";
+require("dotenv").config();
 
 const transcribeClient = new TranscribeClient({
   region: process.env.NEXT_PUBLIC_AWS_REGION,

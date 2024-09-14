@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prepare": "husky install"
+    "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource-variable/unbounded": "^5.1.0",
     "husky": "^9.1.6",
     "next": "14.2.11",
     "react": "^18",

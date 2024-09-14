@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { putAudio, getText } from "../_lib/aws/s3";
+import { textToSpeech } from "../_lib/aws/polly";
 
 const mimeType = "audio/mp3";
 
@@ -13,6 +14,7 @@ export default function AudioRecorder() {
   const [audioChunks, setAudioChunks] = useState([]);
   const [audio, setAudio] = useState(null);
   const [text, setText] = useState("");
+  const [aiAudio, setAiAudio] = useState(false);
 
   const getMicrophonePermission = async () => {
     if ("MediaRecorder" in window) {
@@ -92,6 +94,19 @@ export default function AudioRecorder() {
         Get Result
       </button>
       <div>{text}</div>
+      <h2>Text to Speech</h2>
+      <button onClick={() => textToSpeech(text)} type="button">
+        Use Polly
+      </button>
+      <button onClick={() => setAiAudio(true)} type="button">
+        Get Audio
+      </button>
+      {aiAudio ? (
+        <audio
+          controls
+          src="https://hack-the-north-2024-audio.s3.amazonaws.com/ai.mp3"
+        />
+      ) : null}
     </div>
   );
 }

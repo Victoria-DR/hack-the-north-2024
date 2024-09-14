@@ -1,3 +1,5 @@
+"use client";
+
 import { startRecording, stopRecording } from "../_lib/aws/transcribe.js";
 
 export default function TranscribeTest() {

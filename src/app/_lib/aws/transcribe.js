@@ -6,6 +6,10 @@ require("dotenv").config();
 
 const transcribeClient = new TranscribeClient({
   region: process.env.NEXT_PUBLIC_AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY,
+    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_KEY,
+  },
 });
 
 export const params = {

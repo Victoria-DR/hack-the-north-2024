@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef } from "react";
 import { putAudio } from "../_lib/aws/s3";
 

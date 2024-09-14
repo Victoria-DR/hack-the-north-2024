@@ -1,16 +1,16 @@
 "use client";
 
-import { startRecording, stopRecording } from "../_lib/aws/transcribe.js";
+// import { startRecording, stopRecording } from "../_lib/aws/transcribe.js";
 
 export default function TranscribeTest() {
   return (
     <div>
-      <button id="start" onClick={startRecording}>
+      {/* <button id="start" onClick={startRecording}>
         Start Recording
       </button>
       <button id="stop" onClick={stopRecording}>
         Stop Recording
-      </button>
+      </button> */}
       <div id="transcription"></div>
     </div>
   );

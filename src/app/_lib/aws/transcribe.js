@@ -25,10 +25,10 @@ const createMicrophoneStream = async () => {
 
 const createTranscribeClient = () => {
   transcribeClient = new TranscribeStreamingClient({
-    region: process.env.AWS_REGION,
+    region: process.env.NEXT_PUBLIC_AWS_REGION,
     credentials: {
-      accessKeyId: process.env.AWS_ACCESS_KEY,
-      secretAccessKey: process.env.AWS_SECRET_KEY,
+      accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY,
+      secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_KEY,
     },
   });
 };

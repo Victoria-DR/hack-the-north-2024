@@ -16,8 +16,8 @@ module.exports = {
       }
     },
     fontFamily: {
-      'unbound' : ['"Unbounded Variable"', 'sans-serif'],
-    }
+      'unbound': ['"Unbounded Variable"', "sans-serif"],
+    },
   },
   plugins: [],
 };

@@ -73,7 +73,7 @@ export const Carousel = () => {
 
   return (
     <div className="px-8 overflow-hidden sm:px-14">
-      <div className="relative flex flex-col items-center justify-center w-full min-h-[480px] text-sm">
+      <div className="relative flex flex-col items-center justify-center w-full min-h-[680px] text-sm">
         {carousel.map((pane, id) => (
           <CarouselPane
             key={id}
@@ -83,11 +83,11 @@ export const Carousel = () => {
           >
             <div className="hidden space-y-4 sm:block font-unbound">
               <h1 className="text-4xl text-center font-unbound">{pane.title}</h1>
-              <div className="mt-32">
-                <Image className="absolute right-0 w-48" src={pane.imgLink} alt="Goose" />
+              <div className="flex justify-center mt-32">
+                <Image className="w-48" src={pane.imgLink} alt="Goose" />
               </div>
               <br />
-              <div className="w-2/3">
+              <div className="w-full">
               {pane.opponentDescription.map((line, i) => (
                 <p key={i}>{line}</p>
               ))}

@@ -67,10 +67,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center z-30 justify-center min-h-screen h-screen w-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
-      <h1 className="text-6xl items-center font-regular text-black mb-6">
+    <div className="z-30 flex flex-col items-center justify-center w-screen h-screen min-h-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
+      <div className="items-center mb-6 text-6xl text-black font-unbound">
         Topic: [Placeholder Topic]
-      </h1>
+      </div>
 
       {/* Microphone with click event to toggle recognition */}
       <div
@@ -80,7 +80,7 @@ export default function Home() {
         <Image src={Microphone} width={100} height={80} alt="Microphone" />
       </div>
 
-      <div className="text-center text-black text-xl pt-4">
+      <div className="pt-4 text-xl text-center text-black">
         {!isRecognitionActive
           ? "Click the mic to start speaking"
           : isSpeaking

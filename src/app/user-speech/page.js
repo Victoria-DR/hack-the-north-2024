@@ -1,8 +1,8 @@
 "use client"; // Enables client-side rendering
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { generateArgument } from "../_lib/cohere/cohereHelper";
 import { textToSpeech } from "../_lib/aws/polly";
+import { generateFeedback } from "../_lib/cohere/cohereHelper";
 import Microphone from "../../public/microphone.png";
 
 export default function UserSpeech() {
@@ -10,15 +10,10 @@ export default function UserSpeech() {
   const [isRecognitionActive, setIsRecognitionActive] = useState(false); // To toggle the microphone on and off
 
   useEffect(() => {
-    const getArgument = async () => {
-      const argument = await generateArgument(
-        localStorage.getItem("prompt"),
-        localStorage.getItem("agent"),
-        localStorage.getItem("side"),
-      );
-      const response = await textToSpeech(argument);
+    const getArgumentAudio = async () => {
+      const response = await textToSpeech(localStorage.getItem("aiArgument"));
     };
-    getArgument();
+    getArgumentAudio();
   }, []);
 
   return (

@@ -1,6 +1,7 @@
 "use client"; // Enables client-side rendering
 
 import { useState, useEffect } from "react";
+import { generateArgument } from "../_lib/cohere/cohereHelper";
 
 export default function Countdown() {
   const [seconds, setSeconds] = useState(30); // Start countdown from 30
@@ -8,6 +9,15 @@ export default function Countdown() {
   const [topic, setTopic] = useState("Loading...");
 
   useEffect(() => {
+    const getArgument = async () => {
+      const argument = await generateArgument(
+        localStorage.getItem("prompt"),
+        localStorage.getItem("agent"),
+        localStorage.getItem("side"),
+      );
+      localStorage.setItem("aiArgument", argument);
+    };
+    getArgument();
     setTopic(localStorage.getItem("prompt"));
   }, []);
 

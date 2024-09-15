@@ -35,7 +35,10 @@ export const Carousel = () => {
     },
     {
       title: "Brian",
-      opponentDescription: ["L + ratio", "L + ratio", "L + ratio"],
+      opponentDescription: [
+        "You are no match for me.",
+        "Your head is a pebble compared to my boulder.", 
+        "One of my Mitochondria is smarter than ten of you."],
       imgLink: Brian,
       difficulty: "8",
       personality: "scheming",
@@ -53,9 +56,9 @@ export const Carousel = () => {
     {
       title: "Adam",
       opponentDescription: [
-        "I am Adam the Great",
-        "I am really good at frontend",
-        "I hate backend",
+        "I am Adam the Great.",
+        "I am really good at frontend.",
+        "I hate backend.",
       ],
       imgLink: Adam,
       difficulty: "1",

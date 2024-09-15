@@ -98,6 +98,7 @@ export const Carousel = () => {
                         Start Debate
                 </Link>
                 </div>
+              
             </div>
             <div className="space-y-4 text-sm sm:hidden">
               <h1 className="text-3xl">{pane.title}</h1>
@@ -131,6 +132,7 @@ export const Carousel = () => {
             </button>
           </div>
         </div>
+        
       </div>
     </div>
   );

@@ -52,7 +52,7 @@ const panel = () => {
           />
         </div>
         <div className="mb-4 font-bold">{characterMap[agent]}</div>
-        <div className="px-24 text-base text-center">
+        <div className="px-24 text-sm text-center">
           {aiTranscript}
         </div>
       </div>

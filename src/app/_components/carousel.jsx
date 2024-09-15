@@ -97,13 +97,11 @@ export const Carousel = () => {
                 <Link
                   className="w-1/2 p-2 px-4 text-center text-white bg-purple-900 rounded-md z-100"
                   href="/countdown"
-                  onClick={() =>
-                    localStorage.setItem("agent", {
-                      name: pane.title,
-                      difficulty: pane.difficulty,
-                      personality: pane.personality,
-                    })
-                  }
+                  onClick={() => {
+                    localStorage.setItem("agentName", pane.title);
+                    localStorage.setItem("agentDifficulty", pane.difficulty);
+                    localStorage.setItem("agentPersonality", pane.personality);
+                  }}
                 >
                   Start Debate
                 </Link>

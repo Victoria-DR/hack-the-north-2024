@@ -13,14 +13,14 @@ export const textToSpeech = async (text) => {
 
   const synthesizeSpeechCommand = new SynthesizeSpeechCommand({
     Engine: "neural",
-    Text: text.value,
+    Text: text,
     VoiceId: "Ruth",
     OutputFormat: "mp3",
   });
 
   const { AudioStream } = await pollyClient.send(synthesizeSpeechCommand);
 
-  const audioKey = "ai.mp3";
+  const audioKey = "aiNew.mp3";
 
   const s3Client = new S3Client({
     region: process.env.NEXT_PUBLIC_AWS_REGION,

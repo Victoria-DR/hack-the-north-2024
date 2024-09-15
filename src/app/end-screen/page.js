@@ -19,9 +19,9 @@ const EndScreen = ({ character = "Goose" }) => {
   const [flowScore, setFlowScore] = useState(0);
   const [feedback, setFeedback] = useState("");
   useEffect(() => {
-    setCreativityScore(localStorage.getItem("creativityScore"));
-    setLogicScore(localStorage.getItem("logicScore"));
-    setFlowScore(localStorage.getItem("flowScore"));
+    setCreativityScore(localStorage.getItem("creativity"));
+    setLogicScore(localStorage.getItem("logic"));
+    setFlowScore(localStorage.getItem("flow"));
     setFeedback(localStorage.getItem("feedback"));
   }, []);
 

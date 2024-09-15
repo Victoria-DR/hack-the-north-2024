@@ -14,9 +14,15 @@ export const generatePrompt = async (theme) => {
   return response.text;
 };
 
-export const generateArgument = async (prompt, agent, side) => {
+export const generateArgument = async (
+  prompt,
+  agentName,
+  agentDifficulty,
+  agentPersonality,
+  side,
+) => {
   const response = await cohere.chat({
-    message: `Pretend that you are participating in a debate as ${agent.name} with a ${agent.personality} personality. As ${agent.name} you must create a descriptive and convincing argument to the above prompt arguing for the ${side} side. Your debating skill level should be reflected in your difficulty rating of ${agent.difficulty} out of 10. If your rating is low you might say 'um' or similar pause words, state wrong information, or struggle to form a cohesive argument. If your difficulty is high you will make few to no mistakes. Do not make an introductory statement, jump straight into the argument. During the debate, you should write as the character you are portraying and their associated personality type. Your debate must end with a proper closing statement justifying why your ${side} stance on the argument is correct. It is not required to reintroduce your character and you may assume the opposition knows who you are. Rather, focus on maintaining your character through your argument. Your argument should be between 3 to 5 sentences and in 1 paragraph. Ensure that interactions are constructive, avoiding personal attacks. You should not avoid political, religious, and violent subjects in your argument. Do not format with Markdown. End with a complete sentence with a period.`,
+    message: `Pretend that you are participating in a debate as ${agentName} with a ${agentPersonality} personality. As ${agentName} you must create a descriptive and convincing argument to the above prompt arguing for the ${side} side. Your debating skill level should be reflected in your difficulty rating of ${agentDifficulty} out of 10. If your rating is low you might say 'um' or similar pause words, state wrong information, or struggle to form a cohesive argument. If your difficulty is high you will make few to no mistakes. Do not make an introductory statement, jump straight into the argument. During the debate, you should write as the character you are portraying and their associated personality type. Your debate must end with a proper closing statement justifying why your ${side} stance on the argument is correct. It is not required to reintroduce your character and you may assume the opposition knows who you are. Rather, focus on maintaining your character through your argument. Your argument should be between 3 to 5 sentences and in 1 paragraph. Ensure that interactions are constructive, avoiding personal attacks. You should not avoid political, religious, and violent subjects in your argument. Do not format with Markdown. End with a complete sentence with a period.`,
     stream: false,
     chatHistory: [
       {

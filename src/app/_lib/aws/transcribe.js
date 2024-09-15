@@ -12,12 +12,12 @@ const transcribeClient = new TranscribeClient({
 });
 
 export const params = {
-  TranscriptionJobName: "Test",
+  TranscriptionJobName: Date.now().toString(),
   LanguageCode: "en-US",
   MediaFormat: "mp3",
   Media: {
     MediaFileUri:
-      "https://hack-the-north-2024-audio.s3-us-east-1.amazonaws.com/audio.mp3",
+      "https://hack-the-north-2024-audio.s3-us-east-1.amazonaws.com/user.mp3",
   },
   OutputBucketName: "hack-the-north-2024-text",
   OutputKey: "transcription.json",

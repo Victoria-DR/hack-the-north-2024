@@ -15,7 +15,9 @@ export default function Countdown() {
     const getArgument = async () => {
       const argument = await generateArgument(
         localStorage.getItem("prompt"),
-        localStorage.getItem("agent"),
+        localStorage.getItem("agentName"),
+        localStorage.getItem("agentDifficulty"),
+        localStorage.getItem("agentPersonality"),
         localStorage.getItem("side"),
       );
       localStorage.setItem("aiArgument", argument);
@@ -44,7 +46,7 @@ export default function Countdown() {
 
     // go to selection
     event.preventDefault();
-    router.push("/user-speaking");
+    router.push("/user-speech");
   };
 
   return (

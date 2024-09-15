@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Microphone from "../../public/microphone.png";
 
-export default function Home() {
+export default function UserSpeech() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isListening, setIsListening] = useState(false); // Detect if mic input is detected
   const [isRecognitionActive, setIsRecognitionActive] = useState(false); // Toggle recognition

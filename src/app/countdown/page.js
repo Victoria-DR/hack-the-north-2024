@@ -70,7 +70,7 @@ export default function Countdown() {
           Prep over! Debate starts now!
         </h2>
       )}
-      <div className="items-center mt-32 mb-6 text-3xl text-black font-unbound">
+      <div className="items-center px-32 mt-32 mb-6 text-3xl text-black font-unbound">
         Topic: {topic}
       </div>
     </div>

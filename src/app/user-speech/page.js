@@ -82,7 +82,7 @@ export default function UserSpeech() {
   return (
     <div className="z-30 flex flex-col items-center justify-between w-screen h-screen min-h-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
       <div className="flex flex-col items-center w-full h-full mb-6 text-xl text-black font-unbound">
-        <div className="mt-16 text-4xl">
+        <div className="px-32 mt-16 text-4xl">
         Topic: {topic}
         </div>
         <div className="flex flex-col justify-end w-full h-full min-h-max ">

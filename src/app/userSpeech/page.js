@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Microphone from "../../public/microphone.png";
 
 export default function Home() {
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [isRecognitionActive, setIsRecognitionActive] = useState(false); // Toggle recognition
+  const [isSpeaking, setIsSpeaking] = useState(false); // Checking if the user is speaking
+  const [isRecognitionActive, setIsRecognitionActive] = useState(false); // To toggle the microphone on and off
 
   return (
     <div className="flex flex-col items-center z-30 justify-center min-h-screen h-screen w-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">

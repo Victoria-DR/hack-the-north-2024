@@ -1,9 +1,12 @@
 "use client"; // Enables client-side rendering
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { generateArgument } from "../_lib/cohere/cohereHelper";
 
 export default function Countdown() {
+  const router = useRouter();
+
   const [seconds, setSeconds] = useState(30); // Start countdown from 30
   const [isActive, setIsActive] = useState(true); // Tracks if the timer is active (running)
   const [topic, setTopic] = useState("Loading...");
@@ -36,8 +39,12 @@ export default function Countdown() {
   }, [isActive, seconds]); // Depend on both 'isActive' and 'seconds'
 
   // Function to stop the timer
-  const stopTimer = () => {
+  const stopTimer = (event) => {
     setIsActive(false);
+
+    // go to selection
+    event.preventDefault();
+    router.push("/user-speaking");
   };
 
   return (

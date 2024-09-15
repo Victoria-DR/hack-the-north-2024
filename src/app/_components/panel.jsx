@@ -24,14 +24,14 @@ const characterPictureMap = {
 
 
 
-const panel = () => {
+export default function panel () {
   // eslint-disable-next-line no-unused-vars
-  const [agent, setAgent] = useState("Goose");
+  const [agent, setAgent] = useState("Goose"); // eslint-disable-line
   // eslint-disable-next-line no-unused-vars
-  const [aiTranscript, setAiTranscript] = useState("Loading...");
+  const [aiTranscript, setAiTranscript] = useState("Loading..."); // eslint-disable-line
 
   // eslint-disable-next-line no-unused-vars
-  useEffect(() => {
+  useEffect(() => { // eslint-disable-line
     setAgent(localStorage.getItem("agentName"));
     setAiTranscript(localStorage.getItem("aiArgument"));
     const getFeedback = async () => {
@@ -65,4 +65,4 @@ const panel = () => {
   );
 };
 
-export default panel;
+//export default panel;

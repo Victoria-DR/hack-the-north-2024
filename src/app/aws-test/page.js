@@ -6,7 +6,7 @@ import { textToSpeech } from "../_lib/aws/polly";
 
 const mimeType = "audio/mp3";
 
-export default function AudioRecorder() {
+export default function AWS() {
   const [permission, setPermission] = useState(false);
   const mediaRecorder = useRef(null);
   const [recordingStatus, setRecordingStatus] = useState("inactive");

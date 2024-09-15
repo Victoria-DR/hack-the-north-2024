@@ -27,11 +27,11 @@ const EndScreen = ({ character = "Goose" }) => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen bg-gradient-to-b from-yellow-100 from-10% via-sky-300 via-30% to-pink-400">
-      <div className="flex justify-center p-8 mb-4 rounded-full w-60">
-        <Image className="" src={characterPictureMap[character]} alt="Goose" />
+      <div className="flex justify-center p-8 mb-8 bg-white border-8 border-gray-200 rounded-full w-60">
+        <Image className="rounded" src={characterPictureMap[character]} alt="Goose" />
       </div>
       <div className="flex flex-col justify-center w-2/3 p-8 pb-8 text-2xl text-black bg-white rounded font-unbound shadow-homeCard">
-        <div className="flex justify-between">
+        <div className="flex justify-between bg-white">
           <div>Creativity: {creativityScore}%</div>
           <div>Logic: {logicScore}%</div>
           <div>Flow: {flowScore}%</div>

@@ -11,7 +11,7 @@ const characterMap = {
   Goose: "Goose Goose",
   Mastermind: "Mastermind",
   Aristotle: "Aristotle",
-  Person4: "Person 4",
+  Person4: "Adam",
 };
 
 // Character picture map
@@ -51,7 +51,7 @@ export default function panel () {
           <Image
             className="rounded"
             src={characterPictureMap[agent]}
-            alt="Goose"
+            alt="agent"
           />
         </div>
         <div className="mb-4 font-bold">{characterMap[agent]}</div>

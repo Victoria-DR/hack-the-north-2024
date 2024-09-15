@@ -2,6 +2,7 @@ import React from "react";
 import Panel from "../_components/panel";
 import Image from "next/image";
 import Microphone from "../../public/microphone.png";
+import Link from "next/link";
 // src/public/microphone.png
 
 const OpponentSpeakingPage = ({topic}) => {
@@ -11,6 +12,11 @@ const OpponentSpeakingPage = ({topic}) => {
             <Panel character="Goose" topic="test" />
             {/* <div className="flex justify-center pt-8 blur-sm">
                 <Image src={Microphone} alt="Microphone" width={80} /></div> */}
+            <div className="flex justify-center w-full">
+               <Link className="px-16 py-4 mt-8 text-lg text-center text-white bg-purple-900 rounded-md font-unbound" href="/end-screen">
+                        Results
+                </Link>
+            </div>
         </div>
     );
 };

@@ -5,26 +5,24 @@ import { generateFeedback } from "../_lib/cohere/cohereHelper";
 import Goose from "../../public/goose.png";
 import Image from "next/image";
 import { getText } from "../_lib/aws/s3";
+import Adam from "../../public/adam.png";
+import Brian from "../../public/brian.png";
 
 // Character name map
 const characterMap = {
   Goose: "Goose Goose",
   Mastermind: "Mastermind",
   Aristotle: "Aristotle",
-  Person4: "Person 4",
+  Adam: "Adam",
 };
 
 // Character picture map
 const characterPictureMap = {
   Goose: Goose,
-  Mastermind: Goose,
-  Aristotle: Goose,
-  Person4: Goose,
+  Mastermind: Brian,
+  Aristotle: Adam,
+  Adam: Adam,
 };
-
-const panel = () => {
-  const [agent, setAgent] = useState("Goose"); // eslint-disable-line
-  const [aiTranscript, setAiTranscript] = useState("Loading..."); // eslint-disable-line
 
 export default function panel () {
   // eslint-disable-next-line no-unused-vars
@@ -51,11 +49,11 @@ export default function panel () {
   return (
     <div className="flex self-center justify-center w-2/3 text-black bg-white rounded-lg h-2/3 shadow-homeCard font-unbound">
       <div className="flex flex-col items-center justify-center justify-items-center">
-        <div className="flex justify-center p-8 mb-4 bg-gray-200 rounded-full w-60">
+        <div className="flex justify-center p-8 mb-4 border-8 border-gray-200 rounded-full w-60">
           <Image
-            className=""
+            className="rounded"
             src={characterPictureMap[agent]}
-            alt="Goose"
+            alt="agent"
           />
         </div>
         <div className="mb-4 font-bold">{characterMap[agent]}</div>

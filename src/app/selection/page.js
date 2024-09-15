@@ -1,3 +1,5 @@
+"use client"; 
+
 import Image from "next/image";
 import logo from "../../public/logoHTN.png";
 import Carousel from "../_components/carousel.jsx";
@@ -39,7 +41,7 @@ export default function Home() {
           <div className="w-full h-3/4">
         <Carousel />
       </div>
-  
+
     </div>
   );
 }

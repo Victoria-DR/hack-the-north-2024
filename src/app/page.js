@@ -20,9 +20,7 @@ export default function Home() {
       <div className="flex justify-center w-full">
         <Image className="" src={logo} alt="Logo" width={100} height={100} />
       </div>
-      <div className="py-4 text-2xl text-center text-black">
-        Untitled Debate AI
-      </div>
+      <div className="py-4 text-2xl text-center text-black">{"deb(AI)te"}</div>
       <label className="block w-full mb-2 text-2xl text-center text-gray-700 font-unbound mt-28">
         I want to debate about...
       </label>

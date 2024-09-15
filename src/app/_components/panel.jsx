@@ -26,6 +26,13 @@ const panel = () => {
   const [agent, setAgent] = useState("Goose"); // eslint-disable-line
   const [aiTranscript, setAiTranscript] = useState("Loading..."); // eslint-disable-line
 
+export default function panel () {
+  // eslint-disable-next-line no-unused-vars
+  const [agent, setAgent] = useState("Goose"); // eslint-disable-line
+  // eslint-disable-next-line no-unused-vars
+  const [aiTranscript, setAiTranscript] = useState("Loading..."); // eslint-disable-line
+
+  // eslint-disable-next-line no-unused-vars
   useEffect(() => { // eslint-disable-line
     setAgent(localStorage.getItem("agentName"));
     setAiTranscript(localStorage.getItem("aiArgument"));
@@ -52,7 +59,7 @@ const panel = () => {
           />
         </div>
         <div className="mb-4 font-bold">{characterMap[agent]}</div>
-        <div className="px-24 text-base text-center">
+        <div className="px-24 text-sm text-center">
           {aiTranscript}
         </div>
       </div>
@@ -60,4 +67,4 @@ const panel = () => {
   );
 };
 
-export default panel;
+//export default panel;

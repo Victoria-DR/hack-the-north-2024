@@ -1,6 +1,6 @@
 "use client"; // Enables client-side rendering
-import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Microphone from "../../public/microphone.png";
 
 export default function UserSpeech() {

@@ -25,7 +25,7 @@ export const generateArgument = async (prompt, agent, side) => {
       },
     ],
     connectors: [{ id: "web-search" }],
-    maxTokens: 150,
+    maxTokens: 130,
   });
 
   return response.text;

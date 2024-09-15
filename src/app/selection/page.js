@@ -11,7 +11,6 @@ export default function Home() {
   
   return (
     <div className="items-center gap-16 p-8 pb-20 justify-items-center sm:p-20 bg-slate-100">
-      
       <div className="flex justify-center w-full">
         <Image className="" src={logo} alt="Logo" width={100} height={100} />
       </div>

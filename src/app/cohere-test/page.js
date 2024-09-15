@@ -24,7 +24,7 @@ export default function Cohere() {
     <div>
       <h1>Debate</h1>
       <h2>Prompt</h2>
-      <button onClick={async () => setPrompt(await generatePrompt())}>
+      <button onClick={async () => setPrompt(await generatePrompt("economy"))}>
         Generate Prompt
       </button>
       {prompt && <p>{prompt}</p>}

@@ -1,8 +1,8 @@
 export default function manifest() {
   return {
-    name: "Next.js PWA",
-    short_name: "NextPWA",
-    description: "A Progressive Web App built with Next.js",
+    name: "deb(AI)te",
+    short_name: "deb(AI)te",
+    description: "Hack the North 2024 project.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

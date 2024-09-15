@@ -1,11 +1,25 @@
 "use client"; // Enables client-side rendering
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { generateArgument } from "../_lib/cohere/cohereHelper";
+import { textToSpeech } from "../_lib/aws/polly";
 import Microphone from "../../public/microphone.png";
 
-export default function Home() {
+export default function UserSpeech() {
   const [isSpeaking, setIsSpeaking] = useState(false); // Checking if the user is speaking
   const [isRecognitionActive, setIsRecognitionActive] = useState(false); // To toggle the microphone on and off
+
+  useEffect(() => {
+    const getArgument = async () => {
+      const argument = await generateArgument(
+        localStorage.getItem("prompt"),
+        localStorage.getItem("agent"),
+        localStorage.getItem("side"),
+      );
+      const response = await textToSpeech(argument);
+    };
+    getArgument();
+  }, []);
 
   return (
     <div className="z-30 flex flex-col items-center justify-center w-screen h-screen min-h-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">

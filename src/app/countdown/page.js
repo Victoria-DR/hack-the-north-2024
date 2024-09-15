@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="z-20 flex flex-col items-center justify-center w-screen h-screen min-h-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
-      <h1 className="mb-6 text-black text-7xl font-regular">
+      <h1 className="mb-6 text-black text-7xl font-unbound">
         Prepare your speech
       </h1>
       <h1 className="text-8xl tracking-[0.17em] text-black font-unbound font-bold mb-4">

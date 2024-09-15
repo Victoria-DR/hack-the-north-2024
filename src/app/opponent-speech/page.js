@@ -13,7 +13,7 @@ const OpponentSpeakingPage = () => {
 
   return (
     <div className="flex flex-col justify-center w-full h-screen bg-gradient-to-b from-yellow-100 from-10% via-sky-300 via-30% to-pink-400">
-      <div className="flex justify-center w-full pb-8 text-2xl text-black font-unbound">
+      <div className="flex justify-center w-full px-32 pb-8 text-2xl text-black font-unbound ">
         Topic: {topic}
       </div>
       <Panel />

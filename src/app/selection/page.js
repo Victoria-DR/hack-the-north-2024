@@ -5,7 +5,6 @@ import Carousel from "../_components/carousel.jsx";
 import { generatePrompt } from "../_lib/cohere/cohereHelper.js";
 
 export default function Selection() {
-  1;
   useEffect(() => {
     const getPrompt = async () => {
       const prompt = await generatePrompt(localStorage.getItem("theme"));

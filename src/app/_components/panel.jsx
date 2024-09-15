@@ -47,9 +47,9 @@ export default function panel () {
   return (
     <div className="flex self-center justify-center w-2/3 text-black bg-white rounded-lg h-2/3 shadow-homeCard font-unbound">
       <div className="flex flex-col items-center justify-center justify-items-center">
-        <div className="flex justify-center p-8 mb-4 bg-gray-200 rounded-full w-60">
+        <div className="flex justify-center p-8 mb-4 border-8 border-gray-200 rounded-full w-60">
           <Image
-            className=""
+            className="rounded"
             src={characterPictureMap[agent]}
             alt="Goose"
           />

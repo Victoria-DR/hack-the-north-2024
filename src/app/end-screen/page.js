@@ -13,7 +13,7 @@ const characterPictureMap = {
   Person4: Goose,
 };
 
-const OpponentSpeakingPage = ({ character = "Goose" }) => {
+const EndScreen = ({ character = "Goose" }) => {
   const [creativityScore, setCreativityScore] = useState(0);
   const [logicScore, setLogicScore] = useState(0);
   const [flowScore, setFlowScore] = useState(0);
@@ -51,4 +51,4 @@ const OpponentSpeakingPage = ({ character = "Goose" }) => {
   );
 };
 
-export default OpponentSpeakingPage;
+export default EndScreen;

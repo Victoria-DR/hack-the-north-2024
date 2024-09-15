@@ -80,8 +80,11 @@ export default function UserSpeech() {
 
   return (
     <div className="z-30 flex flex-col items-center justify-center w-screen h-screen min-h-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
-      <div className="items-center mb-6 text-6xl text-black font-unbound">
+      <div className="items-center mb-6 text-xl text-black font-unbound">
+        <div className="text-4xl">
         Topic: {topic}
+        </div>
+        <Image src={Microphone} width={100} height={80} alt="Microphone" />
         <div className={"max-w-xs mx-auto pt-48 cursor-pointer"}>
           {!permission ? (
             <button onClick={getMicrophonePermission} type="button">
@@ -94,7 +97,7 @@ export default function UserSpeech() {
             }
             type="button"
           >
-            <Image src={Microphone} width={100} height={80} alt="Microphone" />
+            
           </button>
         </div>
       </div>

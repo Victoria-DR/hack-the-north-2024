@@ -15,11 +15,13 @@ const CarousselPane = ({ children, id, numPanes, activePane }) => {
 
     // Left inactive
   } else if (id == mod(activePane - 1, numPanes)) {
-    style = "translate-x-3/4 opacity-90 scale-75 duration-500 z-10 bg-violet-200";
+    style =
+      "translate-x-3/4 opacity-90 scale-75 duration-500 z-10 bg-violet-200";
 
     // Right inactive
   } else if (id == mod(activePane + 1, numPanes)) {
-    style = "-translate-x-3/4 opacity-90 scale-75 duration-500 z-10 bg-violet-200";
+    style =
+      "-translate-x-3/4 opacity-90 scale-75 duration-500 z-10 bg-violet-200";
 
     // default
   } else {
@@ -27,18 +29,16 @@ const CarousselPane = ({ children, id, numPanes, activePane }) => {
   }
 
   return (
-      <div
-        className={`absolute t-0 r-0 b-0 l-0 m-auto h-5/6 w-2/5 max-w-3xl p-3
+    <div
+      className={`absolute t-0 r-0 b-0 l-0 m-auto h-5/6 w-2/5 max-w-3xl p-3
       duration-500 rounded-lg shadow-homeCard ${style}`}
-      >
-        <div className="">
-            <div
-            className="w-full p-8 text-black h-fit lg:h-full bg-gradient-to-b"
-            >
-            {children}
-            </div>
+    >
+      <div className="">
+        <div className="w-full p-8 text-black h-fit lg:h-full bg-gradient-to-b">
+          {children}
         </div>
       </div>
+    </div>
   );
 };
 

@@ -1,7 +1,27 @@
+"use client"; 
+
 import Image from "next/image";
 import logo from "../public/logoHTN.png";
+import {useState} from 'react';
+import {useRefs} from 'react';
+
+import { useRouter } from 'next/navigation'
+
 
 export default function Home() {
+    //const [theme, setTheme] = useState('');
+    const router = useRouter()
+
+    const handleSubmit = event => {
+        const themeChosen = document.getElementById('theme').value
+
+        console.log(themeChosen);
+        
+        // go to selection
+        event.preventDefault();
+        router.push('/selection');
+
+        }
   return (
     <div className="items-center min-h-screen gap-16 p-8 pb-20 justify-items-center sm:p-20 bg-slate-100">
       <div className="flex justify-center w-full">
@@ -10,13 +30,14 @@ export default function Home() {
       <div className="py-4 text-2xl text-center text-black">
         Untitled Debate AI
       </div>
-       <label class="block w-full text-center text-2xl text-gray-700 font-unbound mb-2 mt-28" for="theme">
+       <label className="block w-full mb-2 text-2xl text-center text-gray-700 font-unbound mt-28">
         I want to debate about...
       </label>
-      <div className="flex justify-center">
-        <input class=" shadow appearance-none border rounded py-2 px-3 text-gray-700 text-2xl leading-tight focus:outline-none focus:shadow-outline w-2/3" id="theme" type="text" placeholder="Enter Theme..."></input>
+      <div className="flex justify-center w-full">
+        <form onSubmit={handleSubmit}>
+        <input className="w-full px-3 py-2 text-2xl leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="theme" type="text" placeholder="Enter Theme..."></input>
+        </form>
       </div>
-      
     </div>
   );
 }

@@ -5,21 +5,23 @@ import { generateFeedback } from "../_lib/cohere/cohereHelper";
 import Goose from "../../public/goose.png";
 import Image from "next/image";
 import { getText } from "../_lib/aws/s3";
+import Adam from "../../public/adam.png";
+import Brian from "../../public/brian.png";
 
 // Character name map
 const characterMap = {
   Goose: "Goose Goose",
   Mastermind: "Mastermind",
   Aristotle: "Aristotle",
-  Person4: "Adam",
+  Adam: "Adam",
 };
 
 // Character picture map
 const characterPictureMap = {
   Goose: Goose,
-  Mastermind: Goose,
-  Aristotle: Goose,
-  Person4: Goose,
+  Mastermind: Brian,
+  Aristotle: Adam,
+  Adam: Adam,
 };
 
 export default function panel () {

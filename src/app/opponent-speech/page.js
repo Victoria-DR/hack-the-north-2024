@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Panel from "../_components/panel";
 
+
 const OpponentSpeakingPage = () => {
   const [topic, setTopic] = useState("Loading...");
 

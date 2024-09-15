@@ -1,5 +1,3 @@
-"use client"; 
-
 import Image from "next/image";
 import logo from "../../public/logoHTN.png";
 import Carousel from "../_components/carousel.jsx";

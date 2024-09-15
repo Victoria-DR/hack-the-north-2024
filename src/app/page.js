@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation'
 
 
 export default function Home() {
-    
     const router = useRouter()
 
     const handleSubmit = event => {
@@ -35,10 +34,7 @@ export default function Home() {
         <form onSubmit={handleSubmit}>
         <input className="w-full px-3 py-2 text-2xl leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="theme" type="text" placeholder="Enter Theme..."></input>
         </form>
-        
       </div>
-     
-      
     </div>
   );
 }

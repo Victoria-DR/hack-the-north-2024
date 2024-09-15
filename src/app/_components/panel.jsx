@@ -22,10 +22,15 @@ const characterPictureMap = {
   Person4: Goose,
 };
 
+
+
 const panel = () => {
+  // eslint-disable-next-line no-unused-vars
   const [agent, setAgent] = useState("Goose");
+  // eslint-disable-next-line no-unused-vars
   const [aiTranscript, setAiTranscript] = useState("Loading...");
 
+  // eslint-disable-next-line no-unused-vars
   useEffect(() => {
     setAgent(localStorage.getItem("agentName"));
     setAiTranscript(localStorage.getItem("aiArgument"));

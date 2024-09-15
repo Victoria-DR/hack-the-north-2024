@@ -6,6 +6,7 @@ import { putAudio } from "../_lib/aws/s3";
 import { textToSpeech } from "../_lib/aws/polly";
 import Image from "next/image";
 import Microphone from "../../public/microphone.png";
+import Link from "next/link";
 
 const mimeType = "audio/mp3";
 
@@ -79,27 +80,33 @@ export default function UserSpeech() {
   };
 
   return (
-    <div className="z-30 flex flex-col items-center justify-center w-screen h-screen min-h-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
-      <div className="items-center mb-6 text-xl text-black font-unbound">
-        <div className="text-4xl">
+    <div className="z-30 flex flex-col items-center justify-between w-screen h-screen min-h-screen bg-gradient-to-l from-yellow-200 via-fuchsia-200 to-blue-200">
+      <div className="flex flex-col items-center w-full h-full mb-6 text-xl text-black font-unbound">
+        <div className="mt-16 text-4xl">
         Topic: {topic}
         </div>
-        <Image src={Microphone} width={100} height={80} alt="Microphone" />
-        <div className={"max-w-xs mx-auto pt-48 cursor-pointer"}>
-          {!permission ? (
-            <button onClick={getMicrophonePermission} type="button">
-              Get Microphone
+        <div className="flex flex-col justify-end w-full h-full min-h-max ">
+          <div className="flex justify-center w-full">
+            <Image src={Microphone} width={100} height={80} alt="Microphone" />
+          </div>
+          <div className={"max-w-xs mx-auto cursor-pointer"}>
+            {!permission ? (
+              <button onClick={getMicrophonePermission} type="button">
+                Get Microphone
+              </button>
+            ) : null}
+            <button
+              onClick={
+                recordingStatus === "inactive" ? startRecording : stopRecording
+              }
+              type="button"
+            >
+              
             </button>
-          ) : null}
-          <button
-            onClick={
-              recordingStatus === "inactive" ? startRecording : stopRecording
-            }
-            type="button"
-          >
-            
-          </button>
+          
+          </div>
         </div>
+         <Link className="w-1/3 p-2 px-4 my-16 text-center text-white bg-purple-900 rounded-md z-100" href="/opponent-speech">End Debate</Link>
       </div>
     </div>
   );

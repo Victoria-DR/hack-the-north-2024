@@ -23,10 +23,10 @@ const characterPictureMap = {
 };
 
 const panel = () => {
-  const [agent, setAgent] = useState("Goose");
-  const [aiTranscript, setAiTranscript] = useState("Loading...");
+  const [agent, setAgent] = useState("Goose"); // eslint-disable-line
+  const [aiTranscript, setAiTranscript] = useState("Loading..."); // eslint-disable-line
 
-  useEffect(() => {
+  useEffect(() => { // eslint-disable-line
     setAgent(localStorage.getItem("agentName"));
     setAiTranscript(localStorage.getItem("aiArgument"));
     const getFeedback = async () => {

@@ -1,14 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Carousel from "../_components/carousel.jsx";
 import { generatePrompt } from "../_lib/cohere/cohereHelper.js";
+import Carousel from "../_components/carousel.jsx";
 import { Switch } from "@headlessui/react";
 
 export default function Selection() {
   const [enabled, setEnabled] = useState(false);
 
+  const handleToggle = () => {
+    setEnabled(!enabled);
+    if (enabled) {
+      localStorage.setItem("side", "con");
+    } else {
+      localStorage.setItem("side", "pro");
+    }
+  };
+
   useEffect(() => {
+    localStorage.setItem("side", "con");
     const getPrompt = async () => {
       const prompt = await generatePrompt(localStorage.getItem("theme"));
       localStorage.setItem("prompt", prompt);
@@ -25,7 +35,7 @@ export default function Selection() {
         <div className="pr-4 text-xl font-unbound">Pro</div>
         <Switch
           checked={enabled}
-          onChange={setEnabled}
+          onChange={handleToggle}
           className={`${
             enabled ? "bg-purple-600" : "bg-blue-600"
           } relative inline-flex h-8 w-16 items-center rounded-full`}

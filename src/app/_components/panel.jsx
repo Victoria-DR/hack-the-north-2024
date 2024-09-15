@@ -27,8 +27,8 @@ const panel = ({character}) => {
                 <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% rounded-full p-8 w-60 flex justify-center mb-4">
                 <Image className="" src={characterPictureMap[character]} alt="Goose"  />
                 </div>
-                <div className="mb-8 font-bold">{characterMap[character]}</div>
-                <div className="px-24 text-center">This is the {character} speaking transcript. The words the character will say appear here as they speak.The words the character will say appear here as they speak.The words the character will say appear here as they speak.The words the character will say appear here as they speak.The words the character will say appear here as they speak.</div>
+                <div className="mb-4 font-bold">{characterMap[character]}</div>
+                <div className="px-24 text-center text-md">This is the {character} speaking transcript. The words the character will say appear here as they speak. The words the character will say appear here as they speak. The words the character will say appear here as they speak. The words the character will say appear here as they speak. The words the character will say appear here as they speak.  The words the character will say appear here as they speak. The words the character will say appear here as they speak. The words the character will say appear here as they speak.</div>
             </div>
         </div>
     );

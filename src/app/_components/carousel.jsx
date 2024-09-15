@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import CarouselPane from "./carouselpane";
 import Goose from "../../public/goose.png";
+import Adam from "../../public/adam.png";
+import Brian from "../../public/brian.png";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -32,9 +34,9 @@ export const Carousel = () => {
       personality: "obnoxious",
     },
     {
-      title: "Mastermind",
+      title: "Brian",
       opponentDescription: ["L + ratio", "L + ratio", "L + ratio"],
-      imgLink: Goose,
+      imgLink: Brian,
       difficulty: "8",
       personality: "scheming",
     },
@@ -44,18 +46,18 @@ export const Carousel = () => {
         "You lack wisdom.",
         "Your foolishness is matched only poor quality of the verbal spew you speak.",
       ],
-      imgLink: Goose,
+      imgLink: Adam,
       difficulty: "5",
       personality: "pensive",
     },
     {
-      title: "Person 4",
+      title: "Adam",
       opponentDescription: [
-        "I am out of ideas Sobbing",
-        "we can replace this later",
-        "among us",
+        "I am Adam the Great",
+        "I am really good at frontend",
+        "I hate backend",
       ],
-      imgLink: Goose,
+      imgLink: Adam,
       difficulty: "1",
       personality: "normal",
     },

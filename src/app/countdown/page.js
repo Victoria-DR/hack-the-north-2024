@@ -1,8 +1,11 @@
 "use client"; // Enables client-side rendering
 
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
+
   const [seconds, setSeconds] = useState(30); // Start countdown from 30
   const [isActive, setIsActive] = useState(true); // Tracks if the timer is active (running)
 
@@ -21,8 +24,13 @@ export default function Home() {
   }, [isActive, seconds]); // Depend on both 'isActive' and 'seconds'
 
   // Function to stop the timer
-  const stopTimer = () => {
+  const stopTimer = event => {
     setIsActive(false);
+
+    // go to selection
+    event.preventDefault();
+    router.push('/opponent-speaking');
+
   };
 
   return (

@@ -1,12 +1,10 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
 import CarouselPane from "./carouselpane";
 import Goose from "../../public/goose.png";
-import Link from 'next/link';
+import Link from "next/link";
 import Image from "next/image";
-
 
 const mod = (k, n) => {
   let res = k % n;
@@ -27,22 +25,18 @@ export const Carousel = () => {
       opponentDescription: [
         "Goose is angry.",
         "Goose will make this YOUR problem.",
-        "Goose will tear you apart in person AND in debate."
-        
+        "Goose will tear you apart in person AND in debate.",
       ],
       imgLink: Goose,
-      difficulty: "???",   
+      difficulty: "10",
+      personality: "obnoxious",
     },
     {
       title: "Mastermind",
-      opponentDescription: [
-        "L + ratio",
-        "L + ratio",
-        "L + ratio",
-
-      ],
+      opponentDescription: ["L + ratio", "L + ratio", "L + ratio"],
       imgLink: Goose,
-      difficulty: "Medium",
+      difficulty: "8",
+      personality: "scheming",
     },
     {
       title: "Aristotle",
@@ -51,17 +45,19 @@ export const Carousel = () => {
         "Your foolishness is matched only poor quality of the verbal spew you speak.",
       ],
       imgLink: Goose,
-      difficulty: "Hard",
+      difficulty: "5",
+      personality: "pensive",
     },
     {
       title: "Person 4",
       opponentDescription: [
         "I am out of ideas Sobbing",
         "we can replace this later",
-        "among us"
+        "among us",
       ],
       imgLink: Goose,
-      difficulty: "Easy",
+      difficulty: "1",
+      personality: "normal",
     },
   ];
 
@@ -82,23 +78,36 @@ export const Carousel = () => {
             activePane={activePane}
           >
             <div className="hidden space-y-4 sm:block font-unbound">
-              <h1 className="text-4xl text-center font-unbound">{pane.title}</h1>
+              <h1 className="text-4xl text-center font-unbound">
+                {pane.title}
+              </h1>
               <div className="flex justify-center mt-32">
                 <Image className="w-48" src={pane.imgLink} alt="Goose" />
               </div>
               <br />
               <div className="w-full">
-              {pane.opponentDescription.map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
+                {pane.opponentDescription.map((line, i) => (
+                  <p key={i}>{line}</p>
+                ))}
               </div>
               <div className="flex justify-between w-full pt-8">
-                <div className="pt-4 align-text-bottom">Difficulty: {pane.difficulty}</div>
-                <Link className="w-1/2 p-2 px-4 text-center text-white bg-purple-900 rounded-md z-100" href="/countdown">
-                        Start Debate
-                </Link>
+                <div className="pt-4 align-text-bottom">
+                  Difficulty: {pane.difficulty}
                 </div>
-              
+                <Link
+                  className="w-1/2 p-2 px-4 text-center text-white bg-purple-900 rounded-md z-100"
+                  href="/countdown"
+                  onClick={() =>
+                    localStorage.setItem("agent", {
+                      name: pane.title,
+                      difficulty: pane.difficulty,
+                      personality: pane.personality,
+                    })
+                  }
+                >
+                  Start Debate
+                </Link>
+              </div>
             </div>
             <div className="space-y-4 text-sm sm:hidden">
               <h1 className="text-3xl">{pane.title}</h1>
@@ -132,7 +141,6 @@ export const Carousel = () => {
             </button>
           </div>
         </div>
-        
       </div>
     </div>
   );
